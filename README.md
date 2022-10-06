@@ -6,6 +6,11 @@ This repository serves as the SLAM module of the quadrotor-blimp project. We are
 - Dependency: 
   - [ROS-noetic](http://wiki.ros.org/noetic/Installation)
   - Hector mapping: `sudo apt-get install ros-noetic-hector-mapping`
+- How to use:
+  - `cd $YOUR_ROS_WORKSPACE/src`
+  - `git clone https://github.com/Jarvis-X/qb-SLAM/`
+  - `cd ..`
+  - `catkin_make`
 - To run:
   - make sure the usb port the LiDAR sensor is using has writting permission
   - In separate terminals (I use [terminator](https://github.com/gnome-terminator/terminator) for window management), run

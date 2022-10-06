@@ -6,11 +6,16 @@ This repository serves as the SLAM module of the quadrotor-blimp project. We are
 - Dependency: 
   - [ROS-noetic](http://wiki.ros.org/noetic/Installation)
   - Hector mapping: `sudo apt-get install ros-noetic-hector-mapping`
-- How to use:
+- Clone and prepare the src:
   - `cd $YOUR_ROS_WORKSPACE/src`
   - `git clone https://github.com/Jarvis-X/qb-SLAM/`
   - `cd ..`
   - `catkin_make`
+  - `roscd hector-mapping/launch`
+  - We need to change something in the launch file `sudo $YOUR_FAV_TEXT_EDITOR mapping_default.launch`
+    - Change the default argument "base_frame" into `<arg name="base_frame" default="base_link"/> <!-- was "base_footprint" -->`
+    - Change the default argument "odom_frame" into `<arg name="odom_frame" default="base_link"/> <!-- was "nav" -->`
+    - Go to the last line before `</launch>`: it is commented out. Change that into `<node pkg="tf" type="static_transform_publisher" name="map_nav_broadcaster" args="0 0 0 0 0 0 base_link lidar_frame 100"/>`
 - To run:
   - make sure the usb port the LiDAR sensor is using has writting permission
   - In separate terminals (I use [terminator](https://github.com/gnome-terminator/terminator) for window management), run

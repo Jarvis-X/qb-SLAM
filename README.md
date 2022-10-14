@@ -18,8 +18,7 @@ This repository serves as the SLAM module of the quadrotor-blimp project. We are
     - Go to the last line before `</launch>`: it is commented out. Change that into `<node pkg="tf" type="static_transform_publisher" name="map_nav_broadcaster" args="0 0 0 0 0 0 base_link lidar_frame 100"/>`
 - To run:
   - make sure the usb port the LiDAR sensor is using has writting permission. If any problems encountered, check [README_LiDAR.md](https://github.com/Jarvis-X/qb-SLAM/blob/main/README_LiDAR.md)
-  - In separate terminals (I use [terminator](https://github.com/gnome-terminator/terminator) for window management), run
-    - `roslaunch qb_slam run_qbSLAM.launch`
+  - `roslaunch qb_slam run_qbSLAM.launch`
 
 ### TODO:
 - odometry integration with Hector-SLAM
